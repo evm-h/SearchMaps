@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SearchMaps.Models.Domain.Region>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+
+    <div class="container-fluid col-3">
+        <div class="container h-auto p-0">
+       
+            <select id="select" data-toggle="option" class = "custom-select w-100 m-1 p-0 text-center">
+                <option selected>Выберите регион</option>
+                @foreach (var item in Model)
+                {
+                    <option id="selectID" value="@item.ID">@item.Name</option>
+                }
+
+            </select>
+        </div>
+
+        <div class="list-group pre-scrollable text-center m-1 border " id="myList">
+           
+        </div>
+        @*<div>
+                <button id="nextBtn" type="button" class="btn btn-info m-3">Следующий</button>
+
+
+            </div>*@
+
+    </div>
+
+
+    <div class="container-fluid col-6">
+        <div>
+            <div class="m-2" id="map" style="width: 100%; height: 500px">
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container col-3" id="info">
+        <div class="card h-auto" id="info-card">
+            @*@await Html.PartialAsync("InfoPartView.cshtml")*@
+        </div>
+    </div>
+    
+</div>
+

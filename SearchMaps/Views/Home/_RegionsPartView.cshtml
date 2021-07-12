@@ -1,0 +1,11 @@
+﻿@model IEnumerable<SearchMaps.Models.Poco.MainTableView>
+
+@foreach (var item in Model)
+{
+    <a data-cust-id="@item.Id" class="list-group-item list-group-item-action" data-toggle="list">
+        <h5 class="list-group-item-heading" data-region-id="@item.Region.ID">@item.Region.Name</h5>
+        <p class="list-group-item-text address">@item.District @item.City @item.Locality</p>
+    </a>
+}
+
+
